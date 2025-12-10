@@ -1,0 +1,24 @@
+query CombinedCharacterData {
+  # 2. Fetch single character details (using the singular field)
+  singleCharacter: character(id: 4) {
+    id
+    name
+    status
+    species
+    gender
+  }
+
+  # 4. Fetch the paginated list (using the plural field)
+  characterPage: characters(page: 4) {
+    info {
+      count
+      pages
+      next
+      prev
+    }
+    results {
+      id
+      name
+    }
+  }
+}
